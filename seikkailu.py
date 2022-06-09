@@ -1,7 +1,8 @@
 #Testing stuff
 
-#Reppun sisältö tulee tähän listaan
+#Reppun sisältö tulee tähän listaan, WIP
 reppu = ['omena']
+
 #Rahat
 rahat = [100]
 
@@ -56,8 +57,6 @@ Mitä teet?
 
 5. Suuntaa takaisin sisälle
 
-I. Tutki reppuasi
-
 > ''')
         if laitureilla == '1':
             print('Näet paljon junia ja odottavia ihmisiä.')
@@ -75,21 +74,114 @@ I. Tutki reppuasi
             print('päätät suunnata takaisin sisälle')
             break
         
-        elif laitureilla == 'I':
-            omareppu()
-        
         else:
             print('Virheellinen valinta', '\n')
 
 #Kioskin sisällä
 def kioskissa():
     while True:
-        kioskissa = input('Kioskissa on paljon virvokkeita ja välipaloja')      
+        kioskissa = input('''
+ Kioskissa on paljon virvokkeita ja välipaloja
+ Mitä haluat tehdä?
+
+ 1. Selaa lehtiä 
+
+ 2. Katsele suklaapatukka tarjonaa
+
+ 3. Tarkastele juoma tarjontaa
+
+ 4. Katsele ympärille
+
+ 5. Käännyt ja lähdet ulos kioskista
+
+ > ''')
+        if kioskissa == '1':
+            print('''
+Selaat lehtiä...
+Juorulehtiä, aikakausilehtiä, uutislehtiä... muutama sarjakuva, mutta ei mikään mikä kiinostaisi.
+Jätät lehtien selailun sikseen.
+''')
+
+        elif kioskissa == '2':
+            print('Perus maitosuklaata, pähkinäsuklaata, erilaisia täyte suklaita... Ehkei nyt')
+
+        elif kioskissa == '3':
+            print('Kaljaa, kaljaa, kaljaa ja lisää kaljaa... Juovatko ihmiset mitään muuta täällä?!')
+
+        elif kioskissa == '4':
+            print('''
+Päätät vähän katsella ympärille...
+
+Kioskin myyjä näyttää elämäänsä kyllästyneeltä keski-ikäiseltä mieshenkilöltä, vaikuttaa kuin hän ei olisi nukkunut viimeaikoina tarpeeksi.
+
+Kioskissa notkuu alkoholilta ja kuselta haiseva epämääräinen henkilö, parempi varmaan pysyä kaukana siitä.
+
+Ikkunasta ulos katsoessa näet viliseviä ihmisiä kävelevän junista ulos ja junien sisään... kiireinen juna-asema tähän aikaan päivästä.            
+''')
+
+        elif kioskissa == '5':
+            print('Käännyt ja menet takaisin ulos')
+            break
+
+        else:
+            print('Ei ole hyväksytty komento')
 
 #Hampurilaisravintolan sisällä
 def purilaiselle():
     while True:
-        purilaisella = input('Menet hampurilaisravintolaan, näet menun')
+        purilaisella = input('''
+Astut sisään hampurilaisravintolaan, mitä saisi olla?
+ ___________________________________________________________
+|   __      ____     __     _     ___      ___   _____    |
+|  |   \   |  __|   |  \   | |   |   \    |  /  / ____|   |
+|  | |  |  | |__    | | \  | |   | |\ \    \_\  | |____   |
+|  |  _/   |  __|   | |\ \ | |   | ___ \         \___  \  |
+|  | |     | |__    | | \ \| |   | ____ \        ____| |  |
+|  |_|     |____|   |_|  \___|   |_|   \_\      |_____/   |
+|_________________________________________________________|
+|                                                         |
+|                   < B U R G E R S >                     |
+|_________________________________________________________|
+
+1. Pirtelö - 2e
+
+2. Juustohampurilainen - 2e
+
+3. Ranskalaiset - 1e
+
+4. Limu - 1e
+
+5. Jäätelö - 2e
+
+6. Ei mitään tällä kertaa
+
+> ''')
+        if purilaisella == '1':
+            print('Ostat kylmän ja herkullisen mansikkapirtelön')
+
+
+        elif purilaisella == '2':
+            print('Ostat Juustohampurilaisen, NAMI!')
+
+
+        elif purilaisella == '3':
+            print('Ostat lämpimät, suolaiset ja rasvaiset, mutta herkulliset, ranskalaiset!')
+
+
+        elif purilaisella == '4':
+            print('Ostat virkistävän limun')
+
+
+        elif purilaisella == '5':
+            print('Ostat kermaisen, makean ja hyvän jäätelön')
+
+
+        elif purilaisella == '6':
+            print('Päätät kääntyä ja lähteä hampurilaisravintolasta')
+            break
+
+        else:
+            print('Virheellinen valinta')
 
 #Kahvilan sisällä
 def kahvilassa():
@@ -99,16 +191,42 @@ def kahvilassa():
 #Ulos pääovista
 def paaovistaulos():
     while True:
-            paaovista = input('Edessä näkyy Elielin aukio')
+            paaovista = input('''
+Edessä näkyy Elielin aukio...
+
+Näet kerjäläisiä, jeesustelijoita, hyväntekeväisyys keräilijöitä sekä kiireellisiä ihmisiä kuljeksimassa.
+
+1. Katsele jeesustelijoita
+
+2. Tarkkaile kerjäläistä
+
+3. Tutkaile hyväntekeväisyys keräilijöitä
+
+4. Käänny takaisin sisälle
+''')
+            
+            if paaovista == '1':
+                print('''
+Jeesustelija huutaa megafoniin jotain kuinka Jeesus tulee ja kaikkien pitää pelastautua, hänen mukanaan oleva henkilö jakaa lehtisiä ohikulkijoille... jotka eivät ole kiinnostuneita...''')
+
+            elif paaovista == '2':
+                print('Kerjäläinen istuu polvillaan pahvin päällä ja kerjää tyhjään kertakäyttö kahvimukiin almuja, kaikki kiireiset ihmiset vilisevät ohi')
+
+            elif paaovista == '3':
+                print('Hyväntekeväisyys henkilöt keräävät allekirjoituksia johonkin luonnon pelastus juttuun. Monet kävelevät ohi, mutta muutamat jäävät puhumaan ja kyselemään')
+
+            elif paaovista == '4':
+                print('Eiköhän tässä ollut kaupungin vilinää tarpeeksi... Suuntaat takaisin sisälle.')
+                break
 
 #Tervehdys teksti
 terve = ('''
 
 Tervehdys!
 
-Matkasi alkaa tästä, olet Helsingissä, tarkalleen rautatieasemalla.
+Matkasi alkaa on pysähtynyt Helsingin rautatieasemalle, sinulla on aikaa tuhlattavana.
 
-Minne haluisitkaan matkata? Se on sinusta kiinni.
+Miten haluat kuluttaa aikaa? Se on sinusta kiinni.
 
 ''')
 
@@ -124,13 +242,15 @@ Mihin haluat mennä?
 
 1. Kioski
 
-2. Hampurilaisravintoal
+2. Hampurilaisravintola
 
 3. Kahvila
 
 4. Ulos (pääovista)
 
 5. Ulos (laitureille)
+
+Q. Lopeta peli
 
 > ''')
     
@@ -153,7 +273,11 @@ Mihin haluat mennä?
     #ulos laitureille
     elif hesarauttisvalinnat == '5':
         rauttislaiturit()
-  
+
+    elif hesarauttisvalinnat == 'Q':
+        print('Kiitos, kun pelasit tämän pienen prototyyppi pelin, tämä on vain testi peli harjoittelun takia :)', '\n')
+        break
+    
     else:
         print('Virhellinen valinta tai ei valintaa annettu')
 
