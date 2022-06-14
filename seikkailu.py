@@ -6,6 +6,13 @@ reppu = ['omena']
 #Rahat
 rahat = [100]
 
+#Osto funktio (WIP)
+#def osto():
+
+
+#Energia
+energia = [100]
+
 #Reppu funktio
 def omareppu():
     while True:
@@ -13,7 +20,6 @@ def omareppu():
         print('Tutkit omaa reppuasi, repusta löytyy: ', reppu)
 
         repputoiminto = input('''
-Rahasi: ''', rahat, '''
         
 Mitä haluat tehdä?
 
@@ -23,24 +29,35 @@ Mitä haluat tehdä?
 
 3. Heitä tavara pois
 
-4. Sulje reppu
+4. Katso rahatilanne
+
+5. Sulje reppu
 > ''')
 
         if repputoiminto == '1':
             print('Minkä tavaran haluat käyttää?', '\n')
-            
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
         elif repputoiminto == '2':
             print('Mitä tavaraa haluat katsoa?', '\n')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
         
         elif repputoiminto == '3':
             print('Minkä tavaran haluat heittää pois?', '\n', reppu)
-        
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
         elif repputoiminto == '4':
+            print('Rahasi on', rahat, 'euroa')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
+        
+        elif repputoiminto == '5':
             print('Päätät ettet tarvitse mitään tällä hetkellä', '\n')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
             break
             
         else:
             print('Virheellinen toiminto')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
         
 #Rautatieaseman laiturien ympäristö
 def rauttislaiturit(): 
@@ -53,29 +70,32 @@ Mitä teet?
 
 2. Katsot puhelinta
 
-4. Suuntaat eteenpäin junille
+3. Suuntaat eteenpäin junille
 
-5. Suuntaa takaisin sisälle
+4. Suuntaa takaisin sisälle
 
 > ''')
+
         if laitureilla == '1':
-            print('Näet paljon junia ja odottavia ihmisiä.')
+            print('Näet paljon junia ja odottavia ihmisiä. Paljon liikennettä näyttää olevan tänään.')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
             
         elif laitureilla == '2':
-            print('asd')
+            print('Katsot puhelinta... Ei viestejä tai puheluita, ei mitään mielenkiintoista')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
         
         elif laitureilla == '3':
-            print('asd')
-        
+            print('Kävelet eteenpäin laitureille ja katselet junia. Junia lähtee moniin kaupunkeihin eri osaan Suomea, lopulta olet kiertänyt laiturin ja palaat takaisin')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
         elif laitureilla == '4':
-            print('asd')
-       
-        elif laitureilla == '5':
-            print('päätät suunnata takaisin sisälle')
+            print('Päätät suunnata takaisin sisälle')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
             break
         
         else:
             print('Virheellinen valinta', '\n')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
 #Kioskin sisällä
 def kioskissa():
@@ -92,7 +112,9 @@ def kioskissa():
 
  4. Katsele ympärille
 
- 5. Käännyt ja lähdet ulos kioskista
+ 5. Osta jotakin
+
+ 6. Käännyt ja lähdet ulos kioskista
 
  > ''')
         if kioskissa == '1':
@@ -101,12 +123,15 @@ Selaat lehtiä...
 Juorulehtiä, aikakausilehtiä, uutislehtiä... muutama sarjakuva, mutta ei mikään mikä kiinostaisi.
 Jätät lehtien selailun sikseen.
 ''')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
         elif kioskissa == '2':
             print('Perus maitosuklaata, pähkinäsuklaata, erilaisia täyte suklaita... Ehkei nyt')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
         elif kioskissa == '3':
             print('Kaljaa, kaljaa, kaljaa ja lisää kaljaa... Juovatko ihmiset mitään muuta täällä?!')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
         elif kioskissa == '4':
             print('''
@@ -118,20 +143,26 @@ Kioskissa notkuu alkoholilta ja kuselta haiseva epämääräinen henkilö, parem
 
 Ikkunasta ulos katsoessa näet viliseviä ihmisiä kävelevän junista ulos ja junien sisään... kiireinen juna-asema tähän aikaan päivästä.            
 ''')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
         elif kioskissa == '5':
+            print('Ostit maitosuklaata, se maksoi 1e')
+            
+
+        elif kioskissa == '6':
             print('Käännyt ja menet takaisin ulos')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
             break
 
         else:
             print('Ei ole hyväksytty komento')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
 #Hampurilaisravintolan sisällä
 def purilaiselle():
-    while True:
-        purilaisella = input('''
-Astut sisään hampurilaisravintolaan, mitä saisi olla?
- ___________________________________________________________
+
+    print('''
+ __________________________________________________________
 |   __      ____     __     _     ___      ___   _____    |
 |  |   \   |  __|   |  \   | |   |   \    |  /  / ____|   |
 |  | |  |  | |__    | | \  | |   | |\ \    \_\  | |____   |
@@ -142,7 +173,41 @@ Astut sisään hampurilaisravintolaan, mitä saisi olla?
 |                                                         |
 |                   < B U R G E R S >                     |
 |_________________________________________________________|
+''')
 
+    while True:
+        purilaisella = input('''
+Olet hampurilaisravintolassa, mitä haluat tehdä?
+
+9. Katso ruokalistaa
+
+0. Ei mitään tällä kertaa, poistu
+
+> ''')
+        if purilaisella == '1':
+            print('Ostat kylmän ja herkullisen mansikkapirtelön')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
+
+        elif purilaisella == '2':
+            print('Ostat Juustohampurilaisen, NAMI!')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
+        elif purilaisella == '3':
+            print('Ostat lämpimät, suolaiset ja rasvaiset, mutta herkulliset, ranskalaiset!')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
+
+        elif purilaisella == '4':
+            print('Ostat virkistävän limun')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
+        elif purilaisella == '5':
+            print('Ostat kermaisen, makean ja hyvän jäätelön')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
+        elif purilaisella == '9':
+            print('''
 1. Pirtelö - 2e
 
 2. Juustohampurilainen - 2e
@@ -152,41 +217,57 @@ Astut sisään hampurilaisravintolaan, mitä saisi olla?
 4. Limu - 1e
 
 5. Jäätelö - 2e
-
-6. Ei mitään tällä kertaa
-
-> ''')
-        if purilaisella == '1':
-            print('Ostat kylmän ja herkullisen mansikkapirtelön')
+''')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
 
-        elif purilaisella == '2':
-            print('Ostat Juustohampurilaisen, NAMI!')
-
-
-        elif purilaisella == '3':
-            print('Ostat lämpimät, suolaiset ja rasvaiset, mutta herkulliset, ranskalaiset!')
-
-
-        elif purilaisella == '4':
-            print('Ostat virkistävän limun')
-
-
-        elif purilaisella == '5':
-            print('Ostat kermaisen, makean ja hyvän jäätelön')
-
-
-        elif purilaisella == '6':
+        elif purilaisella == '0':
             print('Päätät kääntyä ja lähteä hampurilaisravintolasta')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
             break
 
         else:
             print('Virheellinen valinta')
+            eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
 #Kahvilan sisällä
 def kahvilassa():
     while True:
-            kahvilassa = input('Astut sisälle kahvilaan, siellä on paljon ihmisiä')
+            kahvilassa = input('''Astut sisälle kahvilaan, siellä on paljon ihmisiä.
+
+1. Katso kahvilan tarjontaa
+
+2. Etsi tyhjä istumapaikka
+
+3. Tutkaile kahvilaa
+
+4. Poistu kahvilasta
+> ''')
+
+            if kahvilassa == '1':
+                print('''
+
+Ruoka- ja juomalista:
+
+''')
+                eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
+            elif kahvilassa == '2':
+                print('Menet istumaan tyhjälle paikalle')
+                eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
+            elif kahvilassa == '3':
+                print('Katselet ympärille')
+                eteenpain = input('Paina ENTER jatkaaksesi . . .')
+
+            elif kahvilassa == '4':
+                print('Et halua mitään, joten käännyt takaisin')
+                eteenpain = input('Paina ENTER jatkaaksesi . . .')
+                break
+
+            else:
+                print('Virheellinen valinta')
+                eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
 #Ulos pääovista
 def paaovistaulos():
@@ -208,15 +289,19 @@ Näet kerjäläisiä, jeesustelijoita, hyväntekeväisyys keräilijöitä sekä 
             if paaovista == '1':
                 print('''
 Jeesustelija huutaa megafoniin jotain kuinka Jeesus tulee ja kaikkien pitää pelastautua, hänen mukanaan oleva henkilö jakaa lehtisiä ohikulkijoille... jotka eivät ole kiinnostuneita...''')
+                eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
             elif paaovista == '2':
                 print('Kerjäläinen istuu polvillaan pahvin päällä ja kerjää tyhjään kertakäyttö kahvimukiin almuja, kaikki kiireiset ihmiset vilisevät ohi')
+                eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
             elif paaovista == '3':
                 print('Hyväntekeväisyys henkilöt keräävät allekirjoituksia johonkin luonnon pelastus juttuun. Monet kävelevät ohi, mutta muutamat jäävät puhumaan ja kyselemään')
+                eteenpain = input('Paina ENTER jatkaaksesi . . .')
 
             elif paaovista == '4':
                 print('Eiköhän tässä ollut kaupungin vilinää tarpeeksi... Suuntaat takaisin sisälle.')
+                eteenpain = input('Paina ENTER jatkaaksesi . . .')
                 break
 
 #Tervehdys teksti
@@ -250,6 +335,10 @@ Mihin haluat mennä?
 
 5. Ulos (laitureille)
 
+6. Katso repun sisältö
+
+7. Osta junalippu
+
 Q. Lopeta peli
 
 > ''')
@@ -273,6 +362,12 @@ Q. Lopeta peli
     #ulos laitureille
     elif hesarauttisvalinnat == '5':
         rauttislaiturit()
+
+    elif hesarauttisvalinnat == '6':
+        omareppu()
+
+    elif hesarauttisvalinnat == '7':
+        print('Minne haluat lähteä?')
 
     elif hesarauttisvalinnat == 'Q':
         print('Kiitos, kun pelasit tämän pienen prototyyppi pelin, tämä on vain testi peli harjoittelun takia :)', '\n')
